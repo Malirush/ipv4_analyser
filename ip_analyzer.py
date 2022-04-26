@@ -1,37 +1,5 @@
-''' ipv4 e formado por 4 numeros separados por '.' que vao de 0-255
-a    porem esses numeros sao 4 numeros com 8 bits---> 120.30.9.20,exemplos: 120=00010001, 30=00000101...
-a             valores= 128 64 32 16 8 4 2 1       ip_ficticio= 10.20.12.45/26 
- separa o numero,pega numero mais proximo ou igual em valores-> 10- o 10 comeca no 8-> 128 64 32 16 8 4 2 1 
- oito somado com numero a direita se passar o valor bota 0                           resto e td 0   1 0 1 0
-                                                                20                                1 0 1 0 0
-                                                                12                                0 1 1 0 0
-                                                                45                              1 0 1 1 0 1
-entao fica 
-10=00001010
-20=00010100
-12=00001100
-45=00101101
-O /26 apos o ip quer dizer 26 bits 1 abaixo da rede restante e 0
-00001010 00010100 00001100 00101101
-11111111 11111111 11111111 11000000 <--1*/26 o resto 0,mascara de sub-rede
-para saber quantos hosts posso ter na rede (2**(quantidade de 0 na mascara sub-rede)-2)
-calcular o octeto ta mascara so fazer igual no ip so que inverso no caso com todos '1' o numero e 255
-11111111 11111111 11111111 11000000   sao 32 numeros
-   255      255      255       192
-00001010 00010100 00001100 00000000 ip da rede
-    10       20       12      0   /26
-00001010 00010100 00001100 00111111 broadcast inves de completar os ultimos 6 com 0 faz com 1 
-   10        20       12       63  /26
-
-
- 1-  receber um ip ok
- 2- ver a mascara de sub-red ok
- 3- ver o ip da rede ok
- 4- ver o broadcast ok
-
- preciso agr fazer uma replace(ou outra forma para mudar valores em listas) no mult trocar os valores que estao em saves por 1 e os que nao estao por 0
-                                                                                                                                    '''
-
+                         
+                                                                                                                                              
 
 class Ipv4():
     def cal_ipv4(ip, **kwargs):
